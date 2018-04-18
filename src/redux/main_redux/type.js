@@ -1,0 +1,1 @@
+export const TOKEN_LINKEDIN = 'TOKEN_LINKEDIN'
