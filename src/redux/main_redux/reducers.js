@@ -1,20 +1,29 @@
-import { TOKEN_LINKEDIN } from './type'
+
+import {
+    FB_TOKEN,
+    TOKEN_LINKEDIN
+} from './type'
 
 const initialState = {
-    //Content initial state
+    FBToken: '',
     token_linkedin: null,
 }
 
 const reducer = (state = initialState, action) => {
-    // Switch case conditions
+    console.log(action.payload ,' ini di reducers')
     switch (action.type) {
-      case TOKEN_LINKEDIN:
-          return {...state, token_linkedin: action.payload}
-        break;
-      default:
-        return state
+        case FB_TOKEN:
+           return {
+               ... state, FBToken: action.payload
+           }
+        case TOKEN_LINKEDIN:
+          return {
+            ...state, token_linkedin: action.payload
+          }
+        default:
+            return state
     }
-    return state
+
 }
 
 export default reducer
