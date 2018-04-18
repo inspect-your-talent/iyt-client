@@ -1,16 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginLinkedin from './src/components/LoginLinkedin'
+import { StackNavigator } from 'react-navigation';
+import { Provider } from 'react-redux';
+import Home from './src/screens/Home';
+import store from './src/redux/store';
+
+
+const RootStack = StackNavigator({
+  Home: {
+    screen: Home
+  }
+}, {
+  initialRouteName: 'Home'
+})
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <LoginLinkedin />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Provider store= { store } >
+        <RootStack />
+      </Provider>
     );
   }
 }
