@@ -1,8 +1,8 @@
-import { TOKEN_LINKEDIN } from './type'
+import { TOKEN_LINKEDIN, PROFILE_LINKEDIN } from './type'
 
 const initialState = {
-    //Content initial state
     token_linkedin: null,
+    profil_linkedin: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,7 +10,8 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
       case TOKEN_LINKEDIN:
           return {...state, token_linkedin: action.payload}
-        break;
+      case PROFILE_LINKEDIN:
+          return {...state, profil_linkedin: action.payload}
       default:
         return state
     }
