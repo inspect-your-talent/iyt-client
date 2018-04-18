@@ -1,5 +1,6 @@
 import {
-    FB_TOKEN
+    FB_TOKEN,
+    TOKEN_LINKEDIN
 } from './type'
 
 export const setFBTokenFunc = (payload) => {
@@ -9,9 +10,18 @@ export const setFBTokenFunc = (payload) => {
     }
 }
 
+export const setTokenLinkedin = (token) => {
+  return {
+    type: TOKEN_LINKEDIN,
+    payload: token
+  }
+}
+
 const setFBToken = (payload) => {
     return {
         type: FB_TOKEN,
         payload: payload
     }
 }
+
+
