@@ -1,5 +1,7 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+    "sdkVersion": "26.0.0",
+     "facebookScheme": "fb555342644850627",
+     "facebookDisplayName": "Inspecta"
   }
 }
