@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import LoginLinkedin from './src/components/LoginLinkedin'
 import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 import Home from './src/screens/Home';
