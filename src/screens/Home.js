@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  View, Text, } from 'react-native';
 import UploadCVButton from '../components/UploadCVButton';
+import LoginLinkedin from '../components/LoginLinkedin';
 
 export default class Home extends Component {
   render() {
@@ -8,6 +9,7 @@ export default class Home extends Component {
       <View>
         <Text> Home </Text>
         <UploadCVButton />
+        <LoginLinkedin />
       </View>
     );
   }
