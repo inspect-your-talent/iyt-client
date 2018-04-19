@@ -16,7 +16,7 @@ class LoginFacebook extends Component {
     }
 
     onSignInWithFacebook = async (e) => {
-        const options = { permissions: ['public_profile', 'email'], }
+        const options = { permissions: ['public_profile', 'email', 'user_posts'], }
         const { type, token } = await Facebook.logInWithReadPermissionsAsync(c.FACEBOOK_APP_ID, options);
         if (type === 'success') {
             const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
