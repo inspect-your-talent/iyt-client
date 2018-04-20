@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { Button, Text, Card, Body, Content, Left,Separator,
-  Icon, Thumbnail, Right, CardItem, List, ListItem } from 'native-base'
-import { View, StyleSheet } from 'react-native'
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { Text, Body, Content, Left, Separator, Icon, ListItem } from 'native-base'
+import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default class Profile extends Component {
   render() {
     return (
       <Content>
-      <Card>
-       <Thumbnail large source={{ uri: 'http://art.sdsu.edu/wp-content/uploads/2015/02/default-user-01.png' }} />
-       <Text>Siti Rohimah</Text>
-        <List>
           <Separator bordered>
             <Text style={{fontSize:18, color:"#3498db"}}>Profile</Text>
           </Separator>
@@ -29,6 +23,14 @@ export default class Profile extends Component {
             </Left>
             <Body>
               <Text>085798246233</Text>
+            </Body>
+          </ListItem>
+          <ListItem icon>
+            <Left>
+              <MaterialCommunityIcons name="web" />
+            </Left>
+            <Body>
+              <Text>srohimah.com</Text>
             </Body>
           </ListItem>
           <ListItem icon>
@@ -55,19 +57,8 @@ export default class Profile extends Component {
               <Text>github.com/srohimah</Text>
             </Body>
           </ListItem>
-        </List>
-      </Card>
        </Content>
     );
   }
 } 
 
-// experience
-// github
-// attitude
-
-const styles = StyleSheet.create({
-  space: {
-    paddingTop: 20,
-  }
-})
