@@ -2,13 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
-import Home from './src/screens/Home';
 import store from './src/redux/store';
+import Home from './src/screens/Home';
+import CameraCV from './src/screens/CameraCV';
 
 
 const RootStack = StackNavigator({
   Home: {
     screen: Home
+  },
+  CameraCV: {
+    screen: CameraCV
   }
 }, {
   initialRouteName: 'Home'
