@@ -42,6 +42,10 @@ class UploadCVButton extends Component {
                 console.log(data.data.data)
             })
             .catch(err => {
+                this.setState({
+                    modalVisible: false
+                })
+                alert('No Data Found')
                 console.log(err)
             })
     }
