@@ -31,14 +31,19 @@ export default class CameraCV extends Component {
             formData.append('image', { uri: photo.uri, name: filename, type });
             console.log(formData, ' ini form data')
             console.log('masuk')
+            this.props.navigation.navigate('WaitingUploadCv')
+
             axios.post('/upload-cv', formData)
                 .then((data) => {
                     alert('Upload completed!');
+                    this.props.navigation.navigate('Home')
                     console.log(data.data.data)
                 })
                 .catch(err => {
                     console.log(err, ' ini error')
                     alert('Upload failed!');
+                    this.props.navigation.navigate('Home')
+
                 })
         }
     };

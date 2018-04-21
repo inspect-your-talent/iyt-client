@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './src/redux/store';
 import Home from './src/screens/Home';
 import CameraCV from './src/screens/CameraCV';
-
+import WaitingUploadCv from './src/screens/WaitingUploadCv';
 
 const RootStack = StackNavigator({
   Home: {
@@ -13,6 +13,9 @@ const RootStack = StackNavigator({
   },
   CameraCV: {
     screen: CameraCV
+  },
+  WaitingUploadCv: {
+    screen: WaitingUploadCv
   }
 }, {
   initialRouteName: 'Home'
