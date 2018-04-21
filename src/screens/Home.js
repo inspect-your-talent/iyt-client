@@ -15,12 +15,9 @@ export default class Home extends Component {
         <UploadCVButton />
         <UserFBPost />
         <Button
-        title="play"
-        onPress={() => {
-          this.props.navigation.navigate('Profile', {});
-        }}
-        >
-      </Button>
+          title="Photo Your CV"
+          onPress={() => this.props.navigation.navigate('CameraCV')}
+        />
       </View>
     );
   }

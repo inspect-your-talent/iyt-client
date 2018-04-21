@@ -2,10 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
-import Home from './src/screens/Home';
 import Profile from './src/screens/Profile'
 import store from './src/redux/store';
-
+import Home from './src/screens/Home';
+import CameraCV from './src/screens/CameraCV';
+import WaitingUploadCv from './src/screens/WaitingUploadCv';
 
 const RootStack = StackNavigator({
   Home: {
@@ -24,6 +25,12 @@ const RootStack = StackNavigator({
       },
     },
   },
+  CameraCV: {
+    screen: CameraCV
+  },
+  WaitingUploadCv: {
+    screen: WaitingUploadCv
+  }
 }, {
   initialRouteName: 'Profile',
 })
