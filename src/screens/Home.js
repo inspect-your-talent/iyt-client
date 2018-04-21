@@ -6,6 +6,11 @@ import LoginLinkedin from '../components/LoginLinkedin';
 import UserFBPost from '../components/UserPostFB'
 
 export default class Home extends Component {
+
+  static navigationOptions = {
+    headerLeft: null
+  }
+  
   render() {
     return (
       <View>

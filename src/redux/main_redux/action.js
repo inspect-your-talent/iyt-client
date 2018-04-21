@@ -3,8 +3,18 @@ import axios from 'axios'
 import {
     FB_TOKEN,
     TOKEN_LINKEDIN,
-    USER_POST_FB
+    USER_POST_FB,
+    RESULT_ANALYSIST
 } from './type'
+
+export const setResultAnalyst = (payload) => {
+    return dispatch => {
+        dispatch({
+          type: RESULT_ANALYSIST,
+          payload : payload
+        })
+    }
+}
 
 export const setFBTokenFunc = (payload) => {
     console.log(payload, 'ini di action')
@@ -40,4 +50,3 @@ const getUserPost_Success = (payload) => {
         payload: payload
     }
 }
-

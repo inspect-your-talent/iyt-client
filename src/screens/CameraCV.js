@@ -3,8 +3,11 @@ import { View, TouchableOpacity, } from 'react-native';
 import {Button, Text} from 'native-base'
 import { Camera, Permissions } from 'expo';
 import axios from '../axios';
+import { setResultAnalyst } from '../redux/main_redux/action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-export default class CameraCV extends Component {
+class CameraCV extends Component {
     constructor() {
         super()
         this.state = {
@@ -36,7 +39,8 @@ export default class CameraCV extends Component {
             axios.post('/upload-cv', formData)
                 .then((data) => {
                     alert('Upload completed!');
-                    this.props.navigation.navigate('Home')
+                    this.props.navigation.navigate('Profile')
+                    this.props.setResultAnalyst(data.data.data)
                     console.log(data.data.data)
                 })
                 .catch(err => {
@@ -70,3 +74,9 @@ export default class CameraCV extends Component {
 
     }
 }
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        setResultAnalyst,
+    }, dispatch)
+}
+export default connect(null, mapDispatchToProps)(CameraCV)

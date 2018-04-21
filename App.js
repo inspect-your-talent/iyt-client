@@ -32,7 +32,7 @@ const RootStack = StackNavigator({
     screen: WaitingUploadCv
   }
 }, {
-  initialRouteName: 'Profile',
+  initialRouteName: 'Home',
 })
 
 export default class App extends React.Component {

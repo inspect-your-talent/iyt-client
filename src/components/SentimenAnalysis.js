@@ -5,9 +5,10 @@ import PieChart from 'react-native-pie-chart';
 
 export default class SentimentAnalys extends Component {
   render() {
+    const { positif, negatif, netral} = this.props.data
     const chart_wh = 250
     const sliceColor = ['#F44336','#2196F3','#FFEB3B']
-    const series = [0.33, 0.33, 0.33]
+    const series = [negatif, positif, netral]
     return (
       <Content>
           <Separator bordered>
@@ -30,11 +31,14 @@ export default class SentimentAnalys extends Component {
                 />
               </View>
             </ScrollView>
+            <Text> Biru: Positif</Text>
+            <Text> Merah: Negatif</Text>
+            <Text> Kuning: Netral</Text>
             </Body>
        </Content>
     );
   }
-} 
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -46,4 +50,3 @@ const styles = StyleSheet.create({
     margin: 10
   }
 });
- 

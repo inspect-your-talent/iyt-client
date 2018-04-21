@@ -3,6 +3,14 @@ import { Text, Body, Content, Left, Separator, ListItem, Right } from 'native-ba
 
 export default class Profile extends Component {
   render() {
+    const {repo, languages, stars, follower, following, contribution} = this.props.data
+    const arrLanguage =  []
+    languages.forEach(la => {
+      if (arrLanguage.indexOf(la) === -1) {
+        arrLanguage.push(la)
+      }
+    })
+
     return (
       <Content>
           <Separator bordered>
@@ -16,7 +24,7 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text>1299</Text>
+              <Text>{contribution}</Text>
             </Right>
           </ListItem>
           <ListItem icon>
@@ -27,7 +35,7 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text>139</Text>
+              <Text>{repo}</Text>
             </Right>
           </ListItem>
           <ListItem icon>
@@ -38,7 +46,7 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text>19</Text>
+              <Text>{stars}</Text>
             </Right>
           </ListItem>
           <ListItem icon>
@@ -49,7 +57,7 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text>499</Text>
+              <Text>{follower}</Text>
             </Right>
           </ListItem>
           <ListItem icon>
@@ -60,7 +68,7 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text>57</Text>
+              <Text>{following}</Text>
             </Right>
           </ListItem>
           <ListItem icon>
@@ -71,11 +79,10 @@ export default class Profile extends Component {
               <Text></Text>
             </Body>
             <Right>
-              <Text style={{textAlign:"left"}}>Javascript, PHP, Python, HTML</Text>
+              <Text style={{textAlign:"left"}}>{ arrLanguage.join(', ')}</Text>
             </Right>
           </ListItem>
        </Content>
     );
   }
-} 
-
+}

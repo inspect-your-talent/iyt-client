@@ -5,32 +5,34 @@ import { View, StyleSheet } from 'react-native'
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 
 export default class Experience extends Component {
+
   render() {
+    const { experiences }  = this.props.data
     return (
       <Content>
           <Separator bordered>
             <Text style={{fontSize:18, color:"#3498db"}}>Experiences</Text>
           </Separator>
-          <ListItem icon>
-            <Left>
-              <FontAwesome name="graduation-cap" />
-            </Left>
-            <Body>
-              <Text>XXXXX</Text>
-            </Body>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <FontAwesome name="graduation-cap" />
-            </Left>
-            <Body>
-              <Text>XXXXX</Text>
-            </Body>
-          </ListItem>
+          {
+            experiences.map(exp => {
+              return (
+                <ListItem icon>
+                  <Left>
+                    <MaterialIcons name="work" />
+                  </Left>
+                  <Body>
+                    <Text>{ exp }</Text>
+                  </Body>
+                </ListItem>
+              )
+            })
+
+          }
+
        </Content>
     );
   }
-} 
+}
 
 
 const styles = StyleSheet.create({

@@ -2,13 +2,15 @@
 import {
     FB_TOKEN,
     TOKEN_LINKEDIN,
-    USER_POST_FB
+    USER_POST_FB,
+    RESULT_ANALYSIST
 } from './type'
 
 const initialState = {
     FBToken: '',
     token_linkedin: null,
-    user_FBPost: ''
+    user_FBPost: '',
+    resultAnalysist : null
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,6 +27,10 @@ const reducer = (state = initialState, action) => {
         case USER_POST_FB:
           return {
             ...state, user_FBPost: action.payload
+          }
+        case RESULT_ANALYSIST:
+          return {
+            ...state, resultAnalysist: action.payload
           }
         default:
             return state

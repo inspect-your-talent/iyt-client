@@ -4,41 +4,22 @@ import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default class Profile extends Component {
   render() {
+    const {
+      githubProfile,
+      facebookProfile,
+      twitterProfile
+    } = this.props.data
     return (
       <Content>
           <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Profile</Text>
+            <Text style={{fontSize:18, color:"#3498db", marginBottom: 32,}}>Profile</Text>
           </Separator>
-          <ListItem icon>
-            <Left>
-              <FontAwesome name="birthday-cake" />
-            </Left>
-            <Body>
-              <Text>29 Desember 1995</Text>
-            </Body>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <FontAwesome name="mobile-phone" />
-            </Left>
-            <Body>
-              <Text>085798246233</Text>
-            </Body>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <MaterialCommunityIcons name="web" />
-            </Left>
-            <Body>
-              <Text>srohimah.com</Text>
-            </Body>
-          </ListItem>
           <ListItem icon>
             <Left>
               <FontAwesome name="twitter" />
             </Left>
             <Body>
-              <Text>twitter.com/sitirohimahzha</Text>
+              <Text>twitter.com/{twitterProfile}</Text>
             </Body>
           </ListItem>
           <ListItem icon>
@@ -46,7 +27,7 @@ export default class Profile extends Component {
               <FontAwesome name="facebook" />
             </Left>
             <Body>
-              <Text>facebook.com/rohimahsiti</Text>
+              <Text>facebook.com/{facebookProfile}</Text>
             </Body>
           </ListItem>
           <ListItem icon>
@@ -54,11 +35,10 @@ export default class Profile extends Component {
               <FontAwesome name="github" />
             </Left>
             <Body>
-              <Text>github.com/srohimah</Text>
+              <Text>github.com/{githubProfile}</Text>
             </Body>
           </ListItem>
        </Content>
     );
   }
-} 
-
+}
