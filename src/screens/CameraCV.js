@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Button, } from 'react-native';
+import { View, TouchableOpacity, } from 'react-native';
+import {Button, Text} from 'native-base'
 import { Camera, Permissions } from 'expo';
 import axios from '../axios';
 
@@ -52,31 +53,10 @@ export default class CameraCV extends Component {
             return (
                 <View style={{ flex: 1 }}>
                     <Camera ref={ref => { this.camera = ref }} style={{ flex: 1 }} type={this.state.type}>
-                        <View>
-
-                            <TouchableOpacity
-                                style={{
-                                    flex: 0.1,
-                                    alignSelf: 'flex-end',
-                                    alignItems: 'center',
-                                }}
-                                onPress={() => {
-                                    this.setState({
-                                        type: this.state.type === Camera.Constants.Type.back
-                                            ? Camera.Constants.Type.front
-                                            : Camera.Constants.Type.back,
-                                    });
-                                }}>
-                                <Text
-                                    style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                                    {' '}Flip{' '}
-                                </Text>
-                                
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                onPress={ this.snap }>
-                                <Text> SNAP </Text>
-                            </TouchableOpacity>
+                        <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center',  }}>
+                          <Button onPress={ this.snap } full>
+                             <Text>Click Me! </Text>
+                          </Button>
                         </View>
                     </Camera>
                 </View>
