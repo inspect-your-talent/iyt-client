@@ -8,27 +8,33 @@ import Favorites from '../components/Favorite';
 import TopicProgramming from '../components/TopicProgramming';
 import SentimentAnalys from '../components/SentimenAnalysis';
 import {Container, Card, Content, Button, Text} from 'native-base';
-import { connect } from 'react-redux'
 import { View } from 'react-native'
 import axios from '../axios'
 
-class Profile extends Component {
+export default class DetailProfile extends Component {
 
-  static navigationOptions = {
-    headerLeft: null
+  state = {
+    candidate: null
   }
 
-  saveCv = () => {
-    const { result, id } = this.props
-    axios.post(`/candidates/${id}`,{candidate: result}).then((res) => {
-      console.log(res.data);
-      this.props.navigation.navigate('ListCandidates')
+  componentDidMount() {
+    this.fetchCV()
+  }
+
+  fetchCV = () => {
+    const { params } = this.props.navigation.state;
+    const id = params ? params.id : null;
+    axios.get(`/candidates/details/${id}`).then((res) => {
+      this.setState({
+        candidate: res.data.data
+      })
+      console.log(res.data.data, ' ini master data')
     }).catch(err => console.log(err))
   }
 
   render() {
-    console.log('ini isi result ', this.props.result)
-    if (this.props.result) {
+    console.log('Ini dia kadidat ', this.state.candidate)
+    if (this.state.candidate) {
       const {
         facebookAnalyzing,
         twitterAnalyzing,
@@ -37,7 +43,7 @@ class Profile extends Component {
         twitterProfile,
         facebookProfile,
         isProgrammer
-      } = this.props.result
+      } = this.state.candidate
       return (
         <Container>
           <Card>
@@ -83,24 +89,6 @@ class Profile extends Component {
             />
             </Content>
           </Card>
-          <Button
-            onPress={() => {
-              this.props.navigation.navigate('Home')
-            }}
-            danger
-            full
-          >
-            <Text> Ignore </Text>
-          </Button>
-          <Button
-            onPress={() => {
-              this.saveCv()
-            }}
-            primary
-            full
-          >
-            <Text> Save </Text>
-          </Button>
         </Container>
       );
     } else {
@@ -109,12 +97,3 @@ class Profile extends Component {
 
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    result: state.reducer.resultAnalysist,
-    id: state.reducer.fb_id
-  }
-}
-
-export default connect(mapStateToProps, null)(Profile)

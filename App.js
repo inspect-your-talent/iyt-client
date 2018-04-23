@@ -8,6 +8,8 @@ import Home from './src/screens/Home';
 import CameraCV from './src/screens/CameraCV';
 import WaitingUploadCv from './src/screens/WaitingUploadCv';
 import Login from './src/screens/Login';
+import ListCandidates from './src/screens/ListCandidates';
+import DetailCandidate from './src/screens/DetailCandidate';
 
 const RootStack = StackNavigator({
   Home: {
@@ -34,6 +36,12 @@ const RootStack = StackNavigator({
   },
   WaitingUploadCv: {
     screen: WaitingUploadCv
+  },
+  ListCandidates: {
+    screen: ListCandidates
+  },
+  DetailCandidate: {
+    screen: DetailCandidate
   }
 }, {
   initialRouteName: 'Login',

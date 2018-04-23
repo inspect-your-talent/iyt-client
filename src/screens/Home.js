@@ -26,6 +26,10 @@ export default class Home extends Component {
           title="Photo Your CV"
           onPress={() => this.props.navigation.navigate('CameraCV')}
         />
+        <Button
+          title="Candidate"
+          onPress={() => this.props.navigation.navigate('ListCandidates')}
+        />
       </View>
     );
   }
