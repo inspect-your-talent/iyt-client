@@ -7,6 +7,7 @@ import store from './src/redux/store';
 import Home from './src/screens/Home';
 import CameraCV from './src/screens/CameraCV';
 import WaitingUploadCv from './src/screens/WaitingUploadCv';
+import Login from './src/screens/Login';
 
 const RootStack = StackNavigator({
   Home: {
@@ -25,6 +26,9 @@ const RootStack = StackNavigator({
       },
     },
   },
+  Login: {
+    screen: Login
+  },
   CameraCV: {
     screen: CameraCV
   },
@@ -32,7 +36,7 @@ const RootStack = StackNavigator({
     screen: WaitingUploadCv
   }
 }, {
-  initialRouteName: 'Home',
+  initialRouteName: 'Login',
 })
 
 export default class App extends React.Component {

@@ -15,9 +15,6 @@ export default class Home extends Component {
   render() {
     return (
       <View>
-        <Text> Home </Text>
-        <LoginFacebook />
-        <LoginLinkedin />
         <UploadPDF
         navigation={ this.props.navigation}
         />
@@ -28,7 +25,6 @@ export default class Home extends Component {
         <Button
           title="Photo Your CV"
           onPress={() => this.props.navigation.navigate('CameraCV')}
-
         />
       </View>
     );

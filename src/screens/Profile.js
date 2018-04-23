@@ -10,11 +10,20 @@ import SentimentAnalys from '../components/SentimenAnalysis';
 import {Container, Card, Content, Button, Text} from 'native-base';
 import { connect } from 'react-redux'
 import { View } from 'react-native'
+import axios from '../axios'
 
 class Profile extends Component {
 
   static navigationOptions = {
     headerLeft: null
+  }
+
+  saveCv = () => {
+    const { result, id } = this.props
+    axios.post(`/candidates/${id}`,{candidate: result}).then((res) => {
+      console.log(res.data);
+      this.props.navigation.navigate('Home')
+    }).catch(err => console.log(err))
   }
 
   render() {
@@ -85,7 +94,7 @@ class Profile extends Component {
           </Button>
           <Button
             onPress={() => {
-              this.props.navigation.navigate('Home')
+              this.saveCv()
             }}
             primary
             full
@@ -104,6 +113,7 @@ class Profile extends Component {
 const mapStateToProps = state => {
   return {
     result: state.reducer.resultAnalysist,
+    id: state.reducer.fb_id
   }
 }
 
