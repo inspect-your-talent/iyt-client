@@ -20,9 +20,9 @@ const RootStack = StackNavigator({
     navigationOptions: {
       headerTitle: 'Summary',
       headerStyle: {
-        backgroundColor: '#3498db',
+        backgroundColor: '#FFF',
       },
-      headerTintColor: '#fff',
+      headerTintColor: '#000',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
@@ -41,7 +41,17 @@ const RootStack = StackNavigator({
     screen: ListCandidates
   },
   DetailCandidate: {
-    screen: DetailCandidate
+    screen: DetailCandidate,
+    navigationOptions: {
+      headerTitle: 'Summary',
+      headerStyle: {
+        backgroundColor: '#FFF',
+      },
+      headerTintColor: '#000',
+      headerTitleStyle: {
+        fontWeight: '300'
+      },
+    },
   }
 }, {
   initialRouteName: 'Login',

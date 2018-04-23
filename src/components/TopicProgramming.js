@@ -6,10 +6,6 @@ export default class TopicProgramming extends Component {
     const {isProgrammer} = this.props.data
     return (
       <Content>
-          <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Programing Experiences</Text>
-          </Separator>
-
           {
             isProgrammer.map(data => {
               return (

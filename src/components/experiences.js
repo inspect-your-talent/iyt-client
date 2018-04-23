@@ -10,25 +10,20 @@ export default class Experience extends Component {
     const { experiences }  = this.props.data
     return (
       <Content>
-          <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Experiences</Text>
-          </Separator>
-          {
-            experiences.map(exp => {
-              return (
-                <ListItem icon>
-                  <Left>
-                    <MaterialIcons name="work" />
-                  </Left>
-                  <Body>
-                    <Text>{ exp }</Text>
-                  </Body>
-                </ListItem>
-              )
-            })
-
-          }
-
+        {
+          experiences.map(exp => {
+            return (
+              <ListItem icon>
+                <Left>
+                  <MaterialIcons name="work" />
+                </Left>
+                <Body>
+                  <Text style={{fontSize:16}}>{ exp }</Text>
+                </Body>
+              </ListItem>
+            )
+          })
+        }
        </Content>
     );
   }

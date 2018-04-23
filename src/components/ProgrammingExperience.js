@@ -13,75 +13,72 @@ export default class Profile extends Component {
 
     return (
       <Content>
-          <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Programing Experiences</Text>
-          </Separator>
-          <ListItem icon>
-            <Left>
-              <Text>Contribution Per year </Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text>{contribution}</Text>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Text>Repositories</Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text>{repo}</Text>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Text>Stars</Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text>{stars}</Text>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Text>Followers</Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text>{follower}</Text>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Text>Following</Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text>{following}</Text>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Text>Language</Text>
-            </Left>
-            <Body>
-              <Text></Text>
-            </Body>
-            <Right>
-              <Text style={{textAlign:"left"}}>{ arrLanguage.join(', ')}</Text>
-            </Right>
-          </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Contribution Per year </Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text>{contribution}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Repositories</Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text>{repo}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Stars</Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text>{stars}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Followers</Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text>{follower}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Following</Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text>{following}</Text>
+          </Right>
+        </ListItem>
+        <ListItem icon>
+          <Left>
+            <Text>Language</Text>
+          </Left>
+          <Body>
+            <Text></Text>
+          </Body>
+          <Right>
+            <Text style={{textAlign:"left"}}>{ arrLanguage.join(', ')}</Text>
+          </Right>
+        </ListItem>
        </Content>
     );
   }
