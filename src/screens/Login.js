@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
-import {  View, Text, StyleSheet } from 'react-native';
-// import LoginFacebook from '../components/LoginFacebook';
-import { create } from 'domain';
+import {  View, Text, Button } from 'react-native';
+import LoginFacebook from '../components/LoginFacebook';
 
-export default class Login extends Component {
-    static navigationOptions = {
-        title: 'Login',
-    };
+export default class Home extends Component {
 
-    render() {
-        return (
-            <View style = { styles.loginContainer }>
-                {/* <LoginFacebook /> */}
-            </View>
-        );
-    }
+  static navigationOptions = {
+    headerLeft: null
+  }
 
+  render() {
+    return (
+      <View>
+        <LoginFacebook
+        navigation= {this.props.navigation}/>
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-    loginContainer: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-    }
-})

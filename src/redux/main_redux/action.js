@@ -4,7 +4,8 @@ import {
     FB_TOKEN,
     TOKEN_LINKEDIN,
     USER_POST_FB,
-    RESULT_ANALYSIST
+    RESULT_ANALYSIST,
+    FB_ID
 } from './type'
 
 export const setResultAnalyst = (payload) => {
@@ -14,6 +15,16 @@ export const setResultAnalyst = (payload) => {
           payload : payload
         })
     }
+}
+
+
+export const setFbId = (payload) => {
+  return dispatch => {
+    dispatch({
+      type: FB_ID,
+      payload
+    })
+  }
 }
 
 export const setFBTokenFunc = (payload) => {

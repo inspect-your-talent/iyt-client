@@ -13,10 +13,10 @@ class UserPostFB extends Component {
     }
   }
   render() {
-    console.log('this props', this.props.redux.user_FBPost)
+    // console.log('this props', this.props.redux.user_FBPost)
     return (
       <View>
-        
+
       </View>
     )
   }

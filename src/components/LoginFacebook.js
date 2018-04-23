@@ -3,7 +3,7 @@ import { View, Text, TouchableHighlight, Alert } from 'react-native';
 import { Facebook } from 'expo';
 import * as c from '../config/constant';
 import { provider } from '../config/firebase';
-import { setFBTokenFunc } from '../redux/main_redux/action';
+import { setFBTokenFunc, setFbId } from '../redux/main_redux/action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -21,14 +21,14 @@ class LoginFacebook extends Component {
         if (type === 'success') {
             const response = await fetch(`https://graph.facebook.com/me?access_token=${token}`);
             console.log(token)
-            Alert.alert(
-                'Logged in!',
-                `Hi ${(await response.json()).name}!`,
-            );
+
+            this.props.setFbId((await response.json()).id)
+
             this.setState({
                 isLoginFB: true
             })
             this.props.setFBTokenFunc(token)
+            this.props.navigation.navigate('Home')
         }
     }
 
@@ -47,7 +47,8 @@ class LoginFacebook extends Component {
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setFBTokenFunc,
+        setFbId
     }, dispatch)
 }
- 
+
 export default connect(null, mapDispatchToProps)(LoginFacebook)
