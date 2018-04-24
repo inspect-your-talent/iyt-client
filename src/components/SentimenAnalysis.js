@@ -27,9 +27,11 @@ export default class SentimentAnalys extends Component {
         </ScrollView>
         </Left>
         <Right>
-          <Text> Biru: Positif</Text>
-          <Text> Merah: Negatif</Text>
-          <Text> Kuning: Netral</Text>
+          <View style={{padding: 16}}>
+            <Text> Biru: Positif</Text>
+            <Text> Merah: Negatif</Text>
+            <Text> Kuning: Netral</Text>
+          </View>
         </Right>
        </Content>
     );

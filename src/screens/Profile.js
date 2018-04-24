@@ -21,13 +21,11 @@ class Profile extends Component {
   saveCv = () => {
     const { result, id } = this.props
     axios.post(`/candidates/${id}`,{candidate: result}).then((res) => {
-      console.log(res.data);
       this.props.navigation.navigate('ListCandidates')
     }).catch(err => console.log(err))
   }
 
   render() {
-    console.log('ini isi result ', this.props.result)
     if (this.props.result) {
       const {
         facebookAnalyzing,
@@ -96,6 +94,24 @@ class Profile extends Component {
               />
             </Tab>
           </Tabs>
+          <Button
+            onPress={() => {
+              this.props.navigation.navigate('Home')
+             }}
+             danger
+             full
+              >
+              <Text> Ignore </Text> 
+          </Button>
+          <Button
+              onPress={() => {
+              this.saveCv()
+              }}
+              primary
+              full
+              >
+              <Text> Save </Text>
+          </Button>
         </Container>
       );
     } else {
