@@ -2,6 +2,10 @@
   "expo": {
     "sdkVersion": "26.0.0",
      "facebookScheme": "fb555342644850627",
-     "facebookDisplayName": "Inspecta"
+     "facebookDisplayName": "Inspecta",
+     "splash": {
+       "image": "./src/assets/img/ss.jpg",
+       "resizeMode": "cover"
+     }
   }
 }
