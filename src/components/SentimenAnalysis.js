@@ -7,11 +7,10 @@ export default class SentimentAnalys extends Component {
   render() {
     const { positif, negatif, netral} = this.props.data
     const chart_wh = 250
-    const sliceColor = ['#F44336','#2196F3','#FFEB3B']
+    const sliceColor = ['#F44336','#2196F3','#9E9E9E']
     const series = [negatif, positif, netral]
     return (
       <Content>
-        <Left>
         <ScrollView style={{flex: 1}}>
           <View style={styles.container}>
             <StatusBar
@@ -24,15 +23,27 @@ export default class SentimentAnalys extends Component {
               sliceColor={sliceColor}
             />
           </View>
-        </ScrollView>
-        </Left>
-        <Right>
-          <View style={{padding: 16}}>
-            <Text> Biru: Positif</Text>
-            <Text> Merah: Negatif</Text>
-            <Text> Kuning: Netral</Text>
+          <View style={{flex: 1, justifyContent:'center', marginTop: 24, marginLeft:40}}>
+            <View style={styles.square}>
+              <View style={{width: 30, height: 30, backgroundColor: '#F44336', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{negatif}</Text>
+              </View>
+              <Text style={{marginLeft: 10, marginTop: 5}}>Negatif</Text>
+            </View>
+            <View style={styles.square}>
+              <View style={{width: 30, height: 30, backgroundColor: '#2196F3', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{positif}</Text>
+              </View>
+              <Text style={{marginLeft: 10, marginTop: 5}}>Positif</Text>
+            </View>
+            <View style={styles.square}>
+              <View style={{width: 30, height: 30, backgroundColor: '#9E9E9E', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{netral}</Text>
+              </View>
+              <Text style={{marginLeft: 10, marginTop: 5}}>Netral</Text>
+            </View>
           </View>
-        </Right>
+        </ScrollView>
        </Content>
     );
   }
@@ -44,7 +55,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    fontSize: 18,
-    margin: 10
-  }
+    fontSize: 16,
+    marginTop: 20,
+    padding: 10
+  },
+  square: {
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    marginBottom : 5,
+  },
 });

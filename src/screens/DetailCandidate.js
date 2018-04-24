@@ -7,6 +7,7 @@ import ProgrammingExperience from '../components/ProgrammingExperience';
 import Favorites from '../components/Favorite';
 import TopicProgramming from '../components/TopicProgramming';
 import SentimentAnalys from '../components/SentimenAnalysis';
+import Loading from '../components/Loading'
 import {Container, Card, Content, Button, Text, Tab, Tabs, ScrollableTab} from 'native-base';
 import { View, StyleSheet } from 'react-native'
 import axios from '../axios'
@@ -14,7 +15,8 @@ import axios from '../axios'
 export default class DetailProfile extends Component {
 
   state = {
-    candidate: null
+    candidate: null,
+    loading: true
   }
 
   componentDidMount() {
@@ -26,13 +28,25 @@ export default class DetailProfile extends Component {
     const id = params ? params.id : null;
     axios.get(`/candidates/details/${id}`).then((res) => {
       this.setState({
-        candidate: res.data.data
+        candidate: res.data.data,
+        loading: false
       })
       console.log(res.data.data, ' ini master data')
-    }).catch(err => console.log(err))
+    }).catch(err => {
+      this.setState({
+        loading: false
+      })
+      console.log(err)
+    })
   }
 
   render() {
+    const { loading } = this.state
+    if (loading) {
+      return (
+        <Loading />
+      )
+    }
     console.log('Ini dia kadidat ', this.state.candidate)
     if (this.state.candidate) {
       const {
@@ -53,7 +67,7 @@ export default class DetailProfile extends Component {
                   name : facebookAnalyzing.name,
                   image: facebookAnalyzing.photo_profile,
                   headline: twitterAnalyzing.profileHeader
-                }}/> 
+                }}/>
               </View>
             </Tab>
             <Tab heading="Sosmed URL" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>

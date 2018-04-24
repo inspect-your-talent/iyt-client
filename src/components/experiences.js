@@ -17,8 +17,8 @@ export default class Experience extends Component {
                 <Left>
                   <MaterialIcons name="work" />
                 </Left>
-                <Body>
-                  <Text style={{fontSize:16}}>{ exp }</Text>
+                <Body style={{flexDirection:'row'}}>
+                  <Text style={{padding: 16, fontSize:16,flex: 1, flexWrap: 'wrap'}}>{ `${exp}` }</Text>
                 </Body>
               </ListItem>
             )
