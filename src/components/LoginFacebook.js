@@ -40,8 +40,10 @@ class LoginFacebook extends Component {
     render() {
         return (
             <View style={[styles.mainLoginContent, styles.textCenter]}>
-                <Image source={require('../assets/img/SmallLogo.png')}
-                    style={{ width: 160, height: 80 }} />
+                <Image 
+                    source={{ uri: 'https://c1.staticflickr.com/1/823/41666795381_1bc5e5b329_m.jpg' }}
+                    style={{ width: 160, height: 80 }} 
+                />
                 <Text style={[styles.textCenter, styles.paddingContent]}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae ante volutpat, ullamcorper nisl eu, ultrices mauris.
                 </Text>
