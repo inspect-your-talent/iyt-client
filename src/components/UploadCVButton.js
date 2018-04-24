@@ -55,36 +55,50 @@ class UploadCVButton extends Component {
       console.log('this props', this.props)
         return (
             <View>
-                {/* <Button
-                    title="Image"
-                    onPress={this.pickImage}
-                /> */}
-                <TouchableOpacity style={styles.gridItem} onPress={this.pickImage}>
-                    <Text style={styles.textGrid}>
-                        Image
-                    </Text>
+                <TouchableOpacity style={styles.parentStyle} onPress={this.pickImage}>
+                    <Image
+                        source={{ uri: 'https://c1.staticflickr.com/1/954/27801178638_0c29dca5eb_t.jpg' }}
+                        style={{ width: 80, height: 80, marginRight: 20, }} />
+                    />
+                <View style={[styles.middleContent, { width: 400 }]}>
+                        <Text style={{ fontWeight: 'bold', }}>
+                            Image
+                     </Text>
+                        <Text style={{ fontSize: 12, marginTop: 5, }}>
+                            Upload file using Image. {"\n"}
+                     </Text>
+                    </View>
+                    <View style={[{ justifyContent: 'center', alignItems: 'flex-end', minWidth: 10 }]}>
+                        <Image
+                            source={{ uri: 'https://c1.staticflickr.com/1/897/41629797722_9fde74d00d_m.jpg' }}
+                            style={[{ width: 10, height: 30, }]} />
+                        />
+                </View>
                 </TouchableOpacity>
+                <View
+                    style={{
+                        borderBottomColor: '#ECECEC',
+                        borderBottomWidth: 1,
+                        marginBottom: 20,
+                    }}
+                />
             </View>
-
         )
     }
 }
 
 const styles = StyleSheet.create({
-    buttonUpload: {
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    gridItem: {
-        borderWidth: 2,
-        width: 100,
-        minHeight: 100,
-        marginLeft: 10,
-        marginRight: 10,
+    parentStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        paddingBottom: 10,
     },
     textGrid: {
         textAlign: 'center'
+    },
+    middleContent: {
+        flex: 1,
+        justifyContent: 'center',
     }
 })
 

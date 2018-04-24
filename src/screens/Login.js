@@ -17,7 +17,8 @@ export default class Home extends Component {
             navigation={this.props.navigation} />
         </View>
         <View style={styles.imageBanneLogin}>
-          <Image  source={require('../assets/img/loginBanner.jpg')}
+          <Image  
+            source={{ uri: 'https://c1.staticflickr.com/1/976/40776937655_63a292b58c_c.jpg' }}
             style={{ width: '100%', height: 145 }} />
         </View>
       </View>

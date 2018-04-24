@@ -54,7 +54,7 @@ const RootStack = StackNavigator({
     },
   }
 }, {
-  initialRouteName: 'Home',
+    initialRouteName: 'Home',
 })
 
 export default class App extends React.Component {

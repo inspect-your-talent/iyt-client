@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button, Image } from 'react-native';
 import {DocumentPicker} from 'expo';
 import { setResultAnalyst } from '../redux/main_redux/action';
 import { connect } from 'react-redux';
@@ -45,24 +45,51 @@ class Uploadpdf extends React.Component {
   render() {
     return (
       <View>
-            <TouchableOpacity style={styles.gridItem} onPress={this._pickDocument}>
-                <Text style={styles.textGrid}>
-                    Document
-                </Text>
+            <TouchableOpacity style={styles.parentStyle} onPress={this._pickDocument}>
+                <Image
+                    source={{ uri: 'https://c1.staticflickr.com/1/865/40958581714_6829e25d67_t.jpg' }}
+                    style={{ width: 80, height: 80, marginRight: 20, }} />
+                />
+                <View style={[styles.middleContent, { width: 400 }]}>
+                    <Text style={{ fontWeight: 'bold', }}>
+                        Document
+                     </Text>
+                     <Text style={{ fontSize: 12, marginTop: 5, }}>
+                        Upload file using document. {"\n"}
+                        Type file .pdf
+                     </Text>
+                </View>
+                <View style={[{ justifyContent: 'center', alignItems: 'flex-end', minWidth: 10}]}>
+                    <Image
+                        source={{ uri: 'https://c1.staticflickr.com/1/897/41629797722_9fde74d00d_m.jpg' }}
+                        style={[{ width: 10, height: 30, }]} />
+                    />
+                </View>
             </TouchableOpacity>
+            <View
+                style={{
+                    borderBottomColor: '#ECECEC',
+                    borderBottomWidth: 1,
+                    marginBottom: 20,
+                }}
+            />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-    gridItem: {
-        borderWidth: 2,
-        width: 100,
-        minHeight: 100,
+    parentStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        paddingBottom: 10,
     },
     textGrid: {
         textAlign: 'center'
+    },
+    middleContent: {
+        flex: 1,
+        justifyContent: 'center',
     }
 })
 
