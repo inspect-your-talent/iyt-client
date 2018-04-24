@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Image, View, Text, StyleSheet, Modal } from 'react-native';
+import { TouchableOpacity, Image, View, Text, StyleSheet, Modal, Button } from 'react-native';
 import { ImagePicker } from 'expo';
 import axios from '../axios';
 import { setResultAnalyst } from '../redux/main_redux/action';
@@ -55,14 +55,14 @@ class UploadCVButton extends Component {
       console.log('this props', this.props)
         return (
             <View>
-                {this.state.image &&
-                    <Image
-                        source={{ uri: this.state.image }}
-                        style={{ width: 200, height: 200 }} />}
-                <TouchableOpacity
+                {/* <Button
+                    title="Image"
                     onPress={this.pickImage}
-                    style={styles.buttonUpload}>
-                    <Text style={styles.buttonText}> Upload CV </Text>
+                /> */}
+                <TouchableOpacity style={styles.gridItem} onPress={this.pickImage}>
+                    <Text style={styles.textGrid}>
+                        Image
+                    </Text>
                 </TouchableOpacity>
             </View>
 
@@ -72,14 +72,19 @@ class UploadCVButton extends Component {
 
 const styles = StyleSheet.create({
     buttonUpload: {
-        width: '100%',
         height: 50,
-        backgroundColor: '#841584',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    buttonText: {
-        color: 'white'
+    gridItem: {
+        borderWidth: 2,
+        width: 100,
+        minHeight: 100,
+        marginLeft: 10,
+        marginRight: 10,
+    },
+    textGrid: {
+        textAlign: 'center'
     }
 })
 

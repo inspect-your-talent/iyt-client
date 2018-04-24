@@ -4,7 +4,9 @@ import {DocumentPicker} from 'expo';
 import { setResultAnalyst } from '../redux/main_redux/action';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import axios from '../axios'
+import axios from '../axios';
+
+
 class Uploadpdf extends React.Component {
 
     _pickDocument = async () => {
@@ -43,17 +45,31 @@ class Uploadpdf extends React.Component {
   render() {
     return (
       <View>
-        <Button
-          title="Select Document"
-          onPress={this._pickDocument}
-        />
+            <TouchableOpacity style={styles.gridItem} onPress={this._pickDocument}>
+                <Text style={styles.textGrid}>
+                    Document
+                </Text>
+            </TouchableOpacity>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    gridItem: {
+        borderWidth: 2,
+        width: 100,
+        minHeight: 100,
+    },
+    textGrid: {
+        textAlign: 'center'
+    }
+})
+
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         setResultAnalyst,
     }, dispatch)
 }
+
 export default connect(null, mapDispatchToProps)(Uploadpdf)
