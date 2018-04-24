@@ -38,12 +38,18 @@ const RootStack = StackNavigator({
     screen: WaitingUploadCv
   },
   ListCandidates: {
-    screen: ListCandidates
+    screen: ListCandidates,
+    navigationOptions: {
+      headerTitle: 'Candidates',
+      headerTintColor: '#000',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   },
   DetailCandidate: {
     screen: DetailCandidate,
-    navigationOptions: {
-      headerTitle: 'Summary',
+    navigationOptions: { 
       headerStyle: {
         backgroundColor: '#FFF',
       },

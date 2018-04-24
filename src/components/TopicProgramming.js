@@ -6,11 +6,35 @@ import { AppRegistry, StyleSheet, ScrollView , StatusBar,View } from 'react-nati
 
 export default class TopicProgramming extends Component {
   render() {
+    let topTopic;
     const {isProgrammer} = this.props.data
-    const topFiveTopic = isProgrammer.slice(0, 5            )
+    if(isProgrammer.length < 5){
+      topTopic = isProgrammer.slice(0, isProgrammer.length)
+    }else{
+      topTopic = isProgrammer.slice(0, 5)
+    }
     const chart_wh = 250
     const sliceColor = ['#66BB6A','#26C6DA','#FFA726','#AB47BC','#FF7043']
-    const series = [topFiveTopic[0].count, topFiveTopic[1].count, topFiveTopic[2].count, topFiveTopic[3].count ,topFiveTopic[4].count]
+
+    const seriesArr = []
+    if(topTopic.length<5){
+      for (let i=0; i<topTopic.length; i++){
+        seriesArr.push(topTopic[i].count)
+      }
+    }else{
+      for (let i=0; i<5; i++){
+        seriesArr.push(topTopic[i].count)
+      }
+    }
+
+    let sliceColorArr = []
+    if(topTopic.length < 5){
+      for (let i=0; i<topTopic.length; i++){
+        sliceColorArr.push(sliceColor[i])
+      }
+    }else{
+      sliceColorArr = ['#66BB6A','#26C6DA','#FFA726','#AB47BC','#FF7043']
+    }
 
     return (
       <Content>
@@ -19,24 +43,29 @@ export default class TopicProgramming extends Component {
               <StatusBar
                 hidden={true}
               />
-              <Text style={styles.title}>Programming Topics</Text>
+              <Text style={styles.title}>Word about programming found on social media</Text>
               <PieChart
                 chart_wh={chart_wh}
-                series={series}
-                sliceColor={sliceColor}
+                series={seriesArr}
+                sliceColor={sliceColorArr}
               />
             </View>
-            <Right>
-              <View style={{padding: 16}}>
-                <Text> Hijau: {topFiveTopic[0].word}</Text>
-                <Text> Biru: {topFiveTopic[1].word}</Text>
-                <Text> Oranye: {topFiveTopic[2].word}</Text>
-                <Text> Ungu: {topFiveTopic[3].word}</Text>
-                <Text> Merah: {topFiveTopic[4].word}</Text>
-              </View>
-            </Right>
-          </ScrollView>
 
+            <View style={{flex: 1, justifyContent:'center', marginTop: 24, marginLeft:40}}>
+            {
+              topTopic.map((data, i) => {
+                return (
+                  <View style={styles.square}>
+                    <View style={{width: 30, height: 30, backgroundColor: sliceColorArr[i], justifyContent:'center', alignItems:'center'}}>
+                      <Text style={{color: '#fff'}}>{data.count}</Text>
+                    </View>
+                    <Text style={{marginLeft: 10, marginTop: 5}}>{data.word}</Text>
+                  </View>
+                )
+              })
+            }
+            </View>
+          </ScrollView>
        </Content>                        
     );
   }
@@ -48,7 +77,14 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   title: {
-    fontSize: 18,
-    margin: 10
-  }
+    fontSize: 16,
+    marginTop: 20,
+    padding: 10
+  },
+  square: {
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    marginBottom : 5,
+  },
 });
