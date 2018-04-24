@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Body, Content, Left,Separator, ListItem } from 'native-base'
+import { Body, Content, Left,Separator, ListItem, Right } from 'native-base'
 import { AppRegistry, StyleSheet, ScrollView , StatusBar, Text, View } from 'react-native';
 import PieChart from 'react-native-pie-chart';
 
@@ -11,30 +11,26 @@ export default class SentimentAnalys extends Component {
     const series = [negatif, positif, netral]
     return (
       <Content>
-          <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Sentiment Analys Result</Text>
-          </Separator>
-            <Left>
-              {/* <FontAwesome name="birthday-cake" /> */}
-            </Left>
-            <Body>
-            <ScrollView style={{flex: 1}}>
-              <View style={styles.container}>
-                <StatusBar
-                  hidden={true}
-                />
-                <Text style={styles.title}>Sentiment Analysis Result</Text>
-                <PieChart
-                  chart_wh={chart_wh}
-                  series={series}
-                  sliceColor={sliceColor}
-                />
-              </View>
-            </ScrollView>
-            <Text> Biru: Positif</Text>
-            <Text> Merah: Negatif</Text>
-            <Text> Kuning: Netral</Text>
-            </Body>
+        <Left>
+        <ScrollView style={{flex: 1}}>
+          <View style={styles.container}>
+            <StatusBar
+              hidden={true}
+            />
+            <Text style={styles.title}>Sentiment analysis result</Text>
+            <PieChart
+              chart_wh={chart_wh}
+              series={series}
+              sliceColor={sliceColor}
+            />
+          </View>
+        </ScrollView>
+        </Left>
+        <Right>
+          <Text> Biru: Positif</Text>
+          <Text> Merah: Negatif</Text>
+          <Text> Kuning: Netral</Text>
+        </Right>
        </Content>
     );
   }

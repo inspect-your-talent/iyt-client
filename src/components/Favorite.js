@@ -7,25 +7,20 @@ export default class Profile extends Component {
     const { fav}  = this.props.data
     return (
       <Content>
-          <Separator bordered>
-            <Text style={{fontSize:18, color:"#3498db"}}>Favorites</Text>
-          </Separator>
-          {
-            fav.map(fav => {
-              return (
-                <ListItem icon>
-                  <Left>
-                    {/* <FontAwesome name="graduation-cap" /> */}
-                  </Left>
-                  <Body>
-                    <Text>{ fav }</Text>
-                  </Body>
-                </ListItem>
-              )
-            })
-
-          }
-
+        {
+          fav.map(fav => {
+            return (
+              <ListItem icon>
+                <Left>
+                  {/* <FontAwesome name="graduation-cap" /> */}
+                </Left>
+                <Body>
+                  <Text style={{fontSize:16}}>{ fav }</Text>
+                </Body>
+              </ListItem>
+            )
+          })
+        }
        </Content>
     );
   }
