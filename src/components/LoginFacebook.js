@@ -12,7 +12,7 @@ import { Button, Icon, Text } from 'native-base';
 import { Entypo } from '@expo/vector-icons';
 
 class LoginFacebook extends Component {
-    
+
     constructor() {
         super()
         this.state = {

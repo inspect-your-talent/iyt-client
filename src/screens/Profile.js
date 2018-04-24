@@ -48,14 +48,14 @@ class Profile extends Component {
                 }}/>
               </View>
             </Tab>
-            <Tab heading="Sosmed URL" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
+            <Tab heading="Social Media" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <ProfileUser data = {{
                 githubProfile,
                 facebookProfile,
                 twitterProfile
               }}/>
             </Tab>
-            <Tab heading="Sentiment Analys" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
+            <Tab heading="Sentiment Analysis" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <SentimentAnalys
                 data = {{
                   positif: twitterAnalyzing.score.score.positif,
@@ -64,14 +64,14 @@ class Profile extends Component {
                 }}
               />
             </Tab>
-            <Tab heading="Experience" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
+            <Tab heading="Experiences" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <Experience
                 data = {{
                   experiences: facebookAnalyzing.experiences
                 }}
               />
             </Tab>
-            <Tab heading="Programming Topic" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
+            <Tab heading="Programming Interest" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <TopicProgramming data ={{
                 isProgrammer
               }} />
@@ -86,7 +86,7 @@ class Profile extends Component {
                 languages : githubAnalyzing.languages
               }}/>
             </Tab>
-            <Tab heading="Favorites" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
+            <Tab heading="Facebook Favorites" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <Favorites
                 data = {{
                   fav: facebookAnalyzing.favorites
@@ -101,7 +101,7 @@ class Profile extends Component {
              danger
              full
               >
-              <Text> Ignore </Text> 
+              <Text> Ignore </Text>
           </Button>
           <Button
               onPress={() => {

@@ -41,27 +41,28 @@ export default class Profile extends Component {
         }
 
         {
-          showmore ?
-            <Button
-            title = "show less"
-            onPress = {
-              () => {
-                this.setState({
-                  showmore: false
-                })
+          fav.length > 10 &&
+            showmore ?
+              <Button
+              title = "show less"
+              onPress = {
+                () => {
+                  this.setState({
+                    showmore: false
+                  })
+                }
               }
-            }
-            /> :
-            <Button
-            title = "show more"
-            onPress = {
-              () => {
-                this.setState({
-                  showmore: true
-                })
+              /> :
+              <Button
+              title = "show more"
+              onPress = {
+                () => {
+                  this.setState({
+                    showmore: true
+                  })
+                }
               }
-            }
-            />
+              />
         }
        </Content>
     );

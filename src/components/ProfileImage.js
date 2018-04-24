@@ -5,11 +5,11 @@ export default class Profile extends Component {
   render() {
     const { name, image, headline } = this.props.data
     return (
-      <Content style={{padding:16}}>
+      <View style={{flex: 1, justifyContent:'flex-start', alignItems:'center', padding: 36 }}>
           <Thumbnail large source={{ uri: image }} />
           <Text style={{fontSize:20, paddingTop:16}}>{ name }</Text>
           <Text style={{fontSize:14}}>{ headline }</Text>
-      </Content>
+      </View>
     );
   }
 }

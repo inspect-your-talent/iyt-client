@@ -17,7 +17,7 @@ export default class Home extends Component {
             navigation={this.props.navigation} />
         </View>
         <View style={styles.imageBanneLogin}>
-          <Image  source={require('../assets/img/loginBanner.jpg')}
+          <Image source={require('../assets/img/loginBanner.jpg')}
             style={{ width: '100%', height: 145 }} />
         </View>
       </View>
@@ -42,4 +42,3 @@ const styles = StyleSheet.create({
     marginTop: '30%',
   }
 })
-

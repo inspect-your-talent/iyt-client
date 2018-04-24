@@ -25,20 +25,20 @@ export default class SentimentAnalys extends Component {
           </View>
           <View style={{flex: 1, justifyContent:'center', marginTop: 24, marginLeft:40}}>
             <View style={styles.square}>
-              <View style={{width: 30, height: 30, backgroundColor: '#F44336', justifyContent:'center', alignItems:'center'}}>
-                <Text style={{color: '#fff'}}>{negatif}</Text>
+              <View style={{width: 50, height: 40, backgroundColor: '#F44336', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{negatif*100}%</Text>
               </View>
               <Text style={{marginLeft: 10, marginTop: 5}}>Negatif</Text>
             </View>
             <View style={styles.square}>
-              <View style={{width: 30, height: 30, backgroundColor: '#2196F3', justifyContent:'center', alignItems:'center'}}>
-                <Text style={{color: '#fff'}}>{positif}</Text>
+              <View style={{width: 50, height: 40, backgroundColor: '#2196F3', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{positif*100}%</Text>
               </View>
               <Text style={{marginLeft: 10, marginTop: 5}}>Positif</Text>
             </View>
             <View style={styles.square}>
-              <View style={{width: 30, height: 30, backgroundColor: '#9E9E9E', justifyContent:'center', alignItems:'center'}}>
-                <Text style={{color: '#fff'}}>{netral}</Text>
+              <View style={{width: 50, height: 40, backgroundColor: '#9E9E9E', justifyContent:'center', alignItems:'center'}}>
+                <Text style={{color: '#fff'}}>{netral*100}%</Text>
               </View>
               <Text style={{marginLeft: 10, marginTop: 5}}>Netral</Text>
             </View>
