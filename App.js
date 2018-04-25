@@ -48,16 +48,7 @@ const RootStack = StackNavigator({
     },
   },
   DetailCandidate: {
-    screen: DetailCandidate,
-    navigationOptions: { 
-      headerStyle: {
-        backgroundColor: '#FFF',
-      },
-      headerTintColor: '#000',
-      headerTitleStyle: {
-        fontWeight: '300'
-      },
-    },
+    screen: DetailCandidate
   }
 }, {
   initialRouteName: 'Login',
