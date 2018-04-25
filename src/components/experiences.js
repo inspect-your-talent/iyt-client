@@ -18,7 +18,7 @@ export default class Experience extends Component {
                   <MaterialIcons name="work" />
                 </Left>
                 <Body>
-                  <Text style={{fontSize:16}}>{ `${exp}` }</Text>
+                  <Text style={{fontSize:14}}>{ `${exp}` }</Text>
                 </Body>
               </ListItem>
             )

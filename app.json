@@ -1,11 +1,21 @@
 {
   "expo": {
     "sdkVersion": "26.0.0",
-     "facebookScheme": "fb555342644850627",
-     "facebookDisplayName": "Inspecta",
-     "splash": {
-       "image": "./src/assets/img/ss.jpg",
-       "resizeMode": "cover"
-     }
+    "facebookScheme": "fb555342644850627",
+    "facebookDisplayName": "Inspecta",
+    "splash": {
+      "image": "./src/assets/img/splash.png",
+      "resizeMode": "cover"
+    },
+    "name": "Inspecta",
+    "icon": "./src/assets/img/icon.png",
+    "version": "1.0.0",
+    "slug": "inspecta",
+    "ios": {
+      "bundleIdentifier": "com.inspecta.inspecta"
+    },
+    "android": {
+      "package": "com.inspecta.inspecta"
+    }
   }
 }

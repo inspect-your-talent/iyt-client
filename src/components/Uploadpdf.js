@@ -21,10 +21,10 @@ class Uploadpdf extends React.Component {
         let localUri =uri;
         let filename = localUri.split('/').pop();
         let match = /\.(\w+)$/.exec(filename);
-        let type = match ? `application/${match[1]}` : `pdf`;
+        let type = 'application/pdf'
         let formData = new FormData();
         formData.append('cv_file', { uri: localUri, name: filename, type });
-
+        console.log("FORM DATA ", formData)
         this.props.navigation.navigate('WaitingUploadCv')
 
         axios.post('/upload-pdf', formData)
