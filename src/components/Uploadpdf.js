@@ -49,7 +49,6 @@ class Uploadpdf extends React.Component {
                 <Image
                     source={{ uri: 'https://c1.staticflickr.com/1/865/40958581714_6829e25d67_t.jpg' }}
                     style={{ width: 80, height: 80, marginRight: 20, }} />
-                />
                 <View style={[styles.middleContent, { width: 400 }]}>
                     <Text style={{ fontWeight: 'bold', }}>
                         Document
@@ -63,7 +62,6 @@ class Uploadpdf extends React.Component {
                     <Image
                         source={{ uri: 'https://c1.staticflickr.com/1/897/41629797722_9fde74d00d_m.jpg' }}
                         style={[{ width: 10, height: 30, }]} />
-                    />
                 </View>
             </TouchableOpacity>
             <View
@@ -72,7 +70,7 @@ class Uploadpdf extends React.Component {
                     borderBottomWidth: 1,
                     marginBottom: 20,
                 }}
-            />
+            ></View>
       </View>
     );
   }

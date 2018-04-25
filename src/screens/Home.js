@@ -27,12 +27,6 @@ export default class Home extends Component {
     
       <View style={styles.container}>
         <ScrollView>
-        {/* <Text style={styles.homeHeader}>
-          Inspecta
-        </Text>
-        <Text style={styles.homeDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu lacus sit amet metus lacinia imperdiet vitae id quam.
-        </Text> */}
         <View style={styles.gridUpload}>
           <UploadPDF
             navigation={this.props.navigation}
@@ -43,7 +37,6 @@ export default class Home extends Component {
           <UploadCamera 
             navigation={this.props.navigation}
           />
-
         </View>
         <Text style={styles.homeHeader}>
           List Candidates

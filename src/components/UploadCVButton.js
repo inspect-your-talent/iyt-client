@@ -59,21 +59,19 @@ class UploadCVButton extends Component {
                     <Image
                         source={{ uri: 'https://c1.staticflickr.com/1/954/27801178638_0c29dca5eb_t.jpg' }}
                         style={{ width: 80, height: 80, marginRight: 20, }} />
-                    />
-                <View style={[styles.middleContent, { width: 400 }]}>
+                    <View style={[styles.middleContent, { width: 400 }]}>
                         <Text style={{ fontWeight: 'bold', }}>
                             Image
-                     </Text>
+                        </Text>
                         <Text style={{ fontSize: 12, marginTop: 5, }}>
                             Upload file using Image. {"\n"}
-                     </Text>
+                        </Text>
                     </View>
                     <View style={[{ justifyContent: 'center', alignItems: 'flex-end', minWidth: 10 }]}>
                         <Image
                             source={{ uri: 'https://c1.staticflickr.com/1/897/41629797722_9fde74d00d_m.jpg' }}
                             style={[{ width: 10, height: 30, }]} />
-                        />
-                </View>
+                    </View>
                 </TouchableOpacity>
                 <View
                     style={{

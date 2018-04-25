@@ -127,10 +127,3 @@ export default class DetailProfile extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  parentStyle: {
-    height: '100%',
-    flex: 1,
-    alignItems: 'center',
-  }
-})

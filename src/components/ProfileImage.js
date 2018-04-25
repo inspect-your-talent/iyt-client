@@ -8,12 +8,13 @@ export default class Profile extends Component {
       facebookProfile,
       twitterProfile } = this.props.data
     return (
-      <Content>
-        <View style={{flex: 1, justifyContent:'flex-start', alignItems:'center', padding: 36 }}>
+      <View>
+        <View style={{alignItems:'center', padding: 36 }}>
           <Thumbnail large source={{ uri: image }} />
           <Text style={{fontSize:20, paddingTop:16}}>{ name }</Text>
           <Text style={{fontSize:14, paddingTop:8}}>{ headline }</Text>
         </View>
+        <View>
         <ListItem icon>
           <Left>
             <FontAwesome name="twitter" />
@@ -38,7 +39,8 @@ export default class Profile extends Component {
             <Text style={{fontSize:16}}>github.com/{githubProfile}</Text>
           </Body>
         </ListItem>
-    </Content>
+        </View>
+    </View>
     
     );
   }

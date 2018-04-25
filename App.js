@@ -51,7 +51,7 @@ const RootStack = StackNavigator({
     screen: DetailCandidate
   }
 }, {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
 })
 
 export default class App extends React.Component {
