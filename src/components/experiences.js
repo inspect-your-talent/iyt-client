@@ -9,7 +9,7 @@ export default class Experience extends Component {
   render() {
     const { experiences }  = this.props.data
     return (
-      <Content>
+      <Content style={{paddingTop:16}}>
         {
           experiences.map(exp => {
             return (
@@ -17,8 +17,8 @@ export default class Experience extends Component {
                 <Left>
                   <MaterialIcons name="work" />
                 </Left>
-                <Body style={{flexDirection:'row'}}>
-                  <Text style={{padding: 16, fontSize:16,flex: 1, flexWrap: 'wrap'}}>{ `${exp}` }</Text>
+                <Body>
+                  <Text style={{fontSize:16}}>{ `${exp}` }</Text>
                 </Body>
               </ListItem>
             )

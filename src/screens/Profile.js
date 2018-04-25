@@ -64,20 +64,14 @@ class Profile extends Component {
         <Container>
           <Tabs renderTabBar={()=> <ScrollableTab />}>
             <Tab heading="Profile" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
-              <View style={ styles.parentStyle }>
                 <ProfileImage data = {{
                   name : facebookAnalyzing.name,
                   image: facebookAnalyzing.photo_profile,
-                  headline: twitterAnalyzing.profileHeader
+                  headline: twitterAnalyzing.profileHeader,
+                  githubProfile,
+                  facebookProfile,
+                  twitterProfile
                 }}/>
-              </View>
-            </Tab>
-            <Tab heading="Social Media" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
-              <ProfileUser data = {{
-                githubProfile,
-                facebookProfile,
-                twitterProfile
-              }}/>
             </Tab>
             <Tab heading="Sentiment Analysis" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <SentimentAnalys

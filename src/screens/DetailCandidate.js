@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {  View, Text, } from 'react-native';
 import ProfileUser from '../components/ProfileUser';
 import Experience from '../components/experiences';
 import ProfileImage from '../components/ProfileImage';
@@ -18,7 +17,17 @@ export default class DetailProfile extends Component {
     candidate: null,
     loading: true
   }
-
+  static navigationOptions = {
+    title: 'Summary',
+    headerTitle: 'Summary',
+    headerStyle: {
+      backgroundColor: '#FFF',
+    },
+    headerTintColor: '#000',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  };
   componentDidMount() {
     this.fetchCV()
   }
@@ -61,20 +70,14 @@ export default class DetailProfile extends Component {
         <Container>
           <Tabs renderTabBar={()=> <ScrollableTab />}>
             <Tab heading="Profile" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
-              <View style={ styles.parentStyle }>
                 <ProfileImage data = {{
                   name : facebookAnalyzing.name,
                   image: facebookAnalyzing.photo_profile,
-                  headline: twitterAnalyzing.profileHeader
+                  headline: twitterAnalyzing.profileHeader,
+                  githubProfile,
+                  facebookProfile,
+                  twitterProfile
                 }}/>
-              </View>
-            </Tab>
-            <Tab heading="Social Media" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
-              <ProfileUser data = {{
-                githubProfile,
-                facebookProfile,
-                twitterProfile
-              }}/>
             </Tab>
             <Tab heading="Sentiment Analysis" tabStyle={{backgroundColor: 'black'}} activeTabStyle={{backgroundColor: 'black'}}>
               <SentimentAnalys
