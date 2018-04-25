@@ -45,7 +45,7 @@ class LoginFacebook extends Component {
                     style={{ width: 160, height: 80 }} 
                 />
                 <Text style={[styles.textCenter, styles.paddingContent]}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae ante volutpat, ullamcorper nisl eu, ultrices mauris.
+                Inspecta is a mobile application that help recruiter to analyze their talent / job applicant based on their cv resume.
                 </Text>
                 <TouchableOpacity onPress={this.onSignInWithFacebook} style={ styles.LoginFB }>
                     <Text style={styles.TextBtnFB}>

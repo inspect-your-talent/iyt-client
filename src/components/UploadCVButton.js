@@ -64,7 +64,7 @@ class UploadCVButton extends Component {
                             Image
                         </Text>
                         <Text style={{ fontSize: 12, marginTop: 5, }}>
-                            Upload file using Image. {"\n"}
+                            Upload image from gallery. {"\n"}
                         </Text>
                     </View>
                     <View style={[{ justifyContent: 'center', alignItems: 'flex-end', minWidth: 10 }]}>

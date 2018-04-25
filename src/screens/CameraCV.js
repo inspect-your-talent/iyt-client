@@ -64,7 +64,7 @@ class CameraCV extends Component {
                     <Camera ref={ref => { this.camera = ref }} style={{ flex: 1 }} type={this.state.type}>
                         <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center',  }}>
                           <Button onPress={ this.snap } full>
-                             <Text>Click Me! </Text>
+                             <Text>Capture</Text>
                           </Button>
                         </View>
                     </Camera>

@@ -11,7 +11,7 @@ export default class Profile extends Component {
     const { fav}  = this.props.data
     const {showmore} = this.state
     return (
-      <Content style={{paddingTop:25}}>
+      <Content>
         {
           !showmore ?
           fav.slice(0,9).map(fav => {

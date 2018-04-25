@@ -12,44 +12,45 @@ export default class Home extends Component {
 
   static navigationOptions = {
     headerTitle: (
-      <Image 
+      <Image
         source={{ uri: 'https://c1.staticflickr.com/1/823/41666795381_1bc5e5b329_m.jpg' }}
-        style={{ width: 90, height: 30 }} 
+        style={{ width: 90, height: 30 }}
       />
-  ),
+    ),
     headerStyle: {
       backgroundColor: '#FFF'
     },
-}
+    headerLeft: null
+  }
 
   render() {
     return (
-    
+
       <View style={styles.container}>
         <ScrollView>
-        <View style={styles.gridUpload}>
-          <UploadPDF
-            navigation={this.props.navigation}
-          />
-          <UploadCVButton
-            navigation={this.props.navigation}
-          />
-          <UploadCamera 
-            navigation={this.props.navigation}
-          />
-        </View>
-        <Text style={styles.homeHeader}>
-          List Candidates
+          <View style={styles.gridUpload}>
+            <UploadPDF
+              navigation={this.props.navigation}
+            />
+            <UploadCVButton
+              navigation={this.props.navigation}
+            />
+            <UploadCamera
+              navigation={this.props.navigation}
+            />
+          </View>
+          <Text style={styles.homeHeader}>
+            List Candidates
         </Text>
-        <Text style={styles.homeDescription}>
-          List CV of candidates that you have been accepted.
+          <Text style={styles.homeDescription}>
+            List CV of candidates that you have been accepted.
         </Text>
-        <TouchableOpacity style={[styles.gridItem, {backgroundColor: '#000', paddingTop: 20, paddingBottom: 20,}]} onPress={() => this.props.navigation.navigate('ListCandidates')}>
-            <Text style={[styles.textGrid, {textAlign: 'center', color: '#FFF'}]}>
+          <TouchableOpacity style={[styles.gridItem, { backgroundColor: '#000', paddingTop: 20, paddingBottom: 20, }]} onPress={() => this.props.navigation.navigate('ListCandidates')}>
+            <Text style={[styles.textGrid, { textAlign: 'center', color: '#FFF' }]}>
               View All Candidates
             </Text>
-        </TouchableOpacity>
-      </ScrollView>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }

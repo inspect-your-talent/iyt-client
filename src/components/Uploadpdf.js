@@ -54,8 +54,7 @@ class Uploadpdf extends React.Component {
                         Document
                      </Text>
                      <Text style={{ fontSize: 12, marginTop: 5, }}>
-                        Upload file using document. {"\n"}
-                        Type file .pdf
+                        Upload pdf file using from storage. {"\n"}
                      </Text>
                 </View>
                 <View style={[{ justifyContent: 'center', alignItems: 'flex-end', minWidth: 10}]}>
