@@ -12,7 +12,7 @@ export default class Profile extends Component {
     })
 
     return (
-      <Content>
+      <Content style={{paddingTop:20}}>
         <ListItem icon>
           <Left>
             <Text>Contribution Per year </Text>
