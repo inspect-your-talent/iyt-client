@@ -9,7 +9,7 @@ import TopicProgramming from '../components/TopicProgramming';
 import SentimentAnalys from '../components/SentimenAnalysis';
 import {Container, Card, Content, Button, Text, Tab, Tabs, ScrollableTab} from 'native-base';
 import { connect } from 'react-redux'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Alert } from 'react-native'
 import axios from '../axios'
 
 class Profile extends Component {
@@ -20,9 +20,33 @@ class Profile extends Component {
 
   saveCv = () => {
     const { result, id } = this.props
-    axios.post(`/candidates/${id}`,{candidate: result}).then((res) => {
-      this.props.navigation.navigate('ListCandidates')
-    }).catch(err => console.log(err))
+    Alert.alert(
+      'Confirmation',
+      'Do you want to save this cv ?',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'Yes', onPress: () => {
+          axios.post(`/candidates/${id}`,{candidate: result}).then((res) => {
+            this.props.navigation.navigate('ListCandidates')
+          }).catch(err => console.log(err))
+        }},
+      ],
+      { cancelable: false }
+    )
+  }
+
+  ignoreCv = () => {
+    Alert.alert(
+      'Alert',
+      'Do you want to ignore this cv ?',
+      [
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'Yes', onPress: () => {
+          this.props.navigation.navigate('Home')
+        }},
+      ],
+      { cancelable: false }
+    )
   }
 
   render() {
@@ -90,7 +114,7 @@ class Profile extends Component {
           </Tabs>
           <Button
             onPress={() => {
-              this.props.navigation.navigate('Home')
+              this.ignoreCv()
              }}
              danger
              full
